@@ -24,7 +24,7 @@ router.post('/', async function (req, res) {
   }
 
   console.log(JSON.stringify(req.body, null, 2));
-  console.log(req.body)
+  console.log(req.body);
 
   // Check for validation tokens, validate them if present
   let areTokensValid = true;
@@ -119,7 +119,7 @@ async function processNotification(notification, msalClient, userAccountId) {
       .select('subject,id,from,toRecipients,body')
       .get();
 
-    console.log("Message Contents",message)
+    console.log('Message Contents', message);
     // Send the notification to the Socket.io room
     emitNotification(notification.subscriptionId, {
       type: 'message',
